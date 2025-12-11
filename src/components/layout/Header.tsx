@@ -7,7 +7,10 @@ export function Header() {
 
   const navItems = [
     { path: '/', label: 'Home', icon: Home },
-    { path: '/admin', label: 'Admin', icon: Settings },
+    // Admin solo in sviluppo
+    ...(import.meta.env.DEV
+      ? [{ path: '/admin', label: 'Admin', icon: Settings }]
+      : []),
   ];
 
   return (
