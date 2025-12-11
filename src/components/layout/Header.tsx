@@ -6,12 +6,13 @@ export function Header() {
   const location = useLocation();
 
   const navItems = [
-    { path: '/', label: 'Home', icon: Home },
-    // Admin solo in sviluppo
-    ...(import.meta.env.DEV
-      ? [{ path: '/admin', label: 'Admin', icon: Settings }]
-      : []),
-  ];
+  { path: '/', label: 'Home', icon: Home },
+  // Admin nascosto in produzione
+  ...(!import.meta.env.PROD
+    ? [{ path: '/admin', label: 'Admin', icon: Settings }]
+    : []),
+];
+
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#003434]/95 backdrop-blur-md">
