@@ -5,12 +5,12 @@ export interface Expansion {
   releaseDate: string;
 }
 
-export type ProductType = 
-  | 'box_booster' 
-  | 'etb' 
-  | 'booster_singolo' 
-  | 'blister_3' 
-  | 'bundle_6' 
+export type ProductType =
+  | 'box_booster'
+  | 'etb'
+  | 'booster_singolo'
+  | 'blister_3'
+  | 'bundle_6'
   | 'tin_box';
 
 export interface Product {
@@ -43,7 +43,7 @@ export interface Price {
   dataInizioPromo?: string;
   dataFinePromo?: string;
   disponibilita: Availability;
-  urlProdotto?: string;
+  urlProdotto: string;        // URL della pagina offerta sul sito del negozio
   ultimoAggiornamento: string;
 }
 

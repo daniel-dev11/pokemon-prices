@@ -188,8 +188,21 @@ export const prices: Price[] = [
     dataInizioPromo: '2025-11-20',
     dataFinePromo: '2025-12-10',
     disponibilita: 'in_negozio',
-    urlProdotto: '',
+    urlProdotto: 'https://URL-PROMO-COOP',
     ultimoAggiornamento: '2025-12-09',
   },
-  // aggiungi altri prezzi se vuoi
+  {
+    id: 'price-2',
+    productId: 'prod-fiamme-etb',
+    shopId: 'shop-amazon', // ⬅️ Amazon
+    prezzoBase: 69.90,
+    // niente fidelity, è il prezzo normale Amazon
+    scontoPercentuale: 0,
+    labelFidelity: '',
+    dataInizioPromo: '2025-12-01',
+    dataFinePromo: '2025-12-31',
+    disponibilita: 'online',
+    urlProdotto: 'https://www.amazon.it/Pok%C3%A9mon-Fuoriclasse-dellespansione-Megaevoluzione-promozionale/dp/B0FN471SG9/ref=dp_fod_d_sccl_1/261-1582704-9868467?pd_rd_w=mBNPp&content-id=amzn1.sym.1f3c1772-ccf5-4aa2-abc0-5bb5851fb447&pf_rd_p=1f3c1772-ccf5-4aa2-abc0-5bb5851fb447&pf_rd_r=HAPPJSC9Y4ZZEE56BG33&pd_rd_wg=FOx49&pd_rd_r=291488d4-9f8d-4b99-a29a-b27ab8f3446d&pd_rd_i=B0FN471SG9&psc=1', // ⬅️ URL ESATTO della pagina Amazon del set
+    ultimoAggiornamento: '2025-12-09',
+  },
 ];

@@ -123,8 +123,7 @@ export function PriceComparisonTable({
                           <ChevronRight className="h-4 w-4 shrink-0" />
                         </Link>
                         <p className="mt-0.5 text-xs text-slate-500">
-                          {PRODUCT_TYPE_LABELS[product.productType] ??
-                            'Prodotto'}
+                          {PRODUCT_TYPE_LABELS[product.productType] ?? 'Prodotto'}
                         </p>
                       </div>
                     </div>
@@ -141,55 +140,57 @@ export function PriceComparisonTable({
                         className="py-2 text-center align-top"
                       >
                         {price ? (
-                          <div
+                          <a
+                            href={price.urlProdotto}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className={cn(
-                              'inline-flex w-full flex-col rounded-xl border bg-white px-2 py-1.5 text-left text-[11px] shadow-sm',
+                              'inline-flex w-full flex-col rounded-xl border bg-white px-2 py-1.5 text-left text-[11px] shadow-sm hover:bg-emerald-50',
                               isBest && 'border-emerald-500 bg-emerald-50'
-          )}
-        >
-          {isBest && (
-            <span className="mb-1 inline-flex w-fit items-center rounded-full bg-emerald-500 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">
-              Miglior prezzo
-            </span>
-          )}
+                            )}
+                          >
+                            {isBest && (
+                              <span className="mb-1 inline-flex w-fit items-center rounded-full bg-emerald-500 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">
+                                Miglior prezzo
+                              </span>
+                            )}
 
-          <span className="text-sm font-semibold text-slate-900">
-            {formatCurrency(price.prezzoFidelity ?? price.prezzoBase)}
-          </span>
+                            <span className="text-sm font-semibold text-slate-900">
+                              {formatCurrency(
+                                price.prezzoFidelity ?? price.prezzoBase
+                              )}
+                            </span>
 
-          {price.prezzoFidelity && (
-            <span className="text-[11px] text-slate-400 line-through">
-              {formatCurrency(price.prezzoBase)}
-            </span>
-          )}
+                            {price.prezzoFidelity && (
+                              <span className="text-[11px] text-slate-400 line-through">
+                                {formatCurrency(price.prezzoBase)}
+                              </span>
+                            )}
 
-          {price.labelFidelity && (
-            <span className="mt-1 text-[11px] text-slate-600">
-              {price.labelFidelity}
-            </span>
-          )}
+                            {price.labelFidelity && (
+                              <span className="mt-1 text-[11px] text-slate-600">
+                                {price.labelFidelity}
+                              </span>
+                            )}
 
-          {price.dataFinePromo && (
-            <span className="mt-0.5 text-[10px] text-slate-400">
-              Fino al {formatDate(price.dataFinePromo)}
-            </span>
-          )}
-        </div>
-      ) : (
-        <span className="text-xs text-slate-400">—</span>
-      )}
-    </TableCell>
+                            {price.dataFinePromo && (
+                              <span className="mt-0.5 text-[10px] text-slate-400">
+                                Fino al {formatDate(price.dataFinePromo)}
+                              </span>
+                            )}
+                          </a>
+                        ) : (
+                          <span className="text-xs text-slate-400">—</span>
+                        )}
+                      </TableCell>
+                    );
+                  })}
+                </TableRow>
+              );
+            })}
+          </TableBody>
+        </Table>
+      </div>
+    </div>
   );
-})}
-            </TableRow>
-          );
-        })}
-      </TableBody>
-    </Table>
-  </div>
-</div>
-);
 }
-
-
-                              

@@ -8,6 +8,7 @@ import ProductDetail from "./pages/ProductDetail";
 import ExpansionPage from "./pages/ExpansionPage";
 import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
+import { OffersPage } from "./pages/OffersPage"; // o '@/pages/OffersPage' se usi alias
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/expansion/:id" element={<ExpansionPage />} />
+          <Route path="/offerte" element={<OffersPage />} />
           <Route path="/admin" element={<Admin />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
